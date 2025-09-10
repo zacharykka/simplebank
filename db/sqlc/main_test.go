@@ -3,6 +3,7 @@ package sqlc
 import (
 	"context"
 	"log"
+	"os"
 	"testing"
 
 	"github.com/jackc/pgx/v5"
@@ -22,4 +23,6 @@ func TestMain(m *testing.M) {
 	}
 
 	testQueries = New(conn)
+	
+	os.Exit(m.Run())
 }
